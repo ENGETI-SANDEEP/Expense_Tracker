@@ -7,7 +7,7 @@ export interface Expense {
   created_at: string;
 }
 
-const API_URL = 'http://localhost:3001';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export const api = {
   async getExpenses(category?: string, sort: 'date_desc' | 'date_asc' = 'date_desc'): Promise<Expense[]> {

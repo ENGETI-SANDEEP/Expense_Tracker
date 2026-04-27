@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { api } from '../api';
 import { Plus } from 'lucide-react';
@@ -18,7 +19,7 @@ export function ExpenseForm({ onExpenseAdded }: ExpenseFormProps) {
   // Generate an idempotency key when the component mounts or after a successful submission
   const [idempotencyKey, setIdempotencyKey] = useState(() => uuidv4());
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError(null);
     setIsSubmitting(true);

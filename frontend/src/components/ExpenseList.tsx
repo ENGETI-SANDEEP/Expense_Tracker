@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { api, type Expense } from '../api';
 import { Pencil, Trash2, Check, X } from 'lucide-react';
 
